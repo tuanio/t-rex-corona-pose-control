@@ -2,6 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
+
+var backendUrl = 'http://127.0.0.1:5000';
+
 (function () {
     'use strict';
     /**
@@ -71,6 +74,7 @@
             this.loadImages();
         }
     }
+    
     window['Runner'] = Runner;
 
 
@@ -201,9 +205,10 @@
      * @enum {Object}
      */
     Runner.keycodes = {
-        JUMP: { '38': 1, '32': 1 },  // Up, spacebar
-        DUCK: { '40': 1 },  // Down
-        RESTART: { '13': 1 }  // Enter
+        JUMP: { '110': 1 },  // Up, spacebar
+        DUCK: { '96': 1 },  // Down
+        // RESTART: { '13': 1 }  // Enter
+        RESTART: { '32': 1 } // spacebar
     };
 
 
@@ -467,7 +472,7 @@
                     'from { width:' + Trex.config.WIDTH + 'px }' +
                     'to { width: ' + this.dimensions.WIDTH + 'px }' +
                     '}';
-                
+
                 // create a style sheet to put the keyframe rule in 
                 // and then place the style sheet in the html head    
                 var sheet = document.createElement('style');
@@ -791,8 +796,12 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-                this.distanceMeter.setHighScore(this.highestScore);
+                let highScore = this.distanceMeter.setHighScore(this.highestScore);
+                fetch(`${backendUrl}/update-highscore/${highScore}`)
+                    .then(res => res.json())
+                    .then(console.log);
             }
+
 
             // Reset the time clock.
             this.time = getTimeStamp();
@@ -2091,8 +2100,8 @@
             distance = this.getActualDistance(distance);
             var highScoreStr = (this.defaultString +
                 distance).substr(-this.maxScoreUnits);
-
             this.highScore = ['10', '11', ''].concat(highScoreStr.split(''));
+            return parseInt(highScoreStr)
         },
 
         /**

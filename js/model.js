@@ -5,11 +5,11 @@
 const URL = "https://teachablemachine.withgoogle.com/models/flmvFrw9F/";
 let model, webcam, ctx, labelContainer, maxPredictions;
 
-let keyPress = new KeyboardEvent("keydown", {
-  key: "space",
-  keyCode: 32, // example values.
-  code: "KeySpace", // put everything you need in this object.
-  which: 32,
+let jump = new KeyboardEvent("keydown", {
+  key: "dot",
+  keyCode: 110, // example values.
+  code: "DotKey", // put everything you need in this object.
+  which: 110,
   shiftKey: false, // you don't need to include values
   ctrlKey: false,  // if you aren't going to use them.
   metaKey: false   // these are here for example's sake.
@@ -26,8 +26,8 @@ async function init() {
   maxPredictions = model.getTotalClasses();
 
   // Convenience function to setup a webcam
-  const width = 250;
-  const height = 250;
+  const width = 224;
+  const height = 224;
   const flip = true; // whether to flip the webcam
   webcam = new tmPose.Webcam(width, height, flip); // width, height, flip
   await webcam.setup(); // request access to the webcam
@@ -38,10 +38,6 @@ async function init() {
   const canvas = document.getElementById("canvas");
   canvas.width = width; canvas.height = height;
   ctx = canvas.getContext("2d");
-  labelContainer = document.getElementById("label-container");
-  for (let i = 0; i < maxPredictions; i++) { // and class labels
-    labelContainer.appendChild(document.createElement("div"));
-  }
 }
 
 async function loop(timestamp) {
@@ -57,20 +53,11 @@ async function predict() {
   // Prediction 2: run input through teachable machine classification model
   const prediction = await model.predict(posenetOutput);
 
-  // for (let i = 0; i < maxPredictions; i++) {
-  //     const classPrediction =
-  //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-  //     labelContainer.childNodes[i].innerHTML = classPrediction;
-  // }
   if (prediction[0].probability >= 0.5) {
-    // labelContainer.childNodes[0].innerHTML = "Jump";
-    document.dispatchEvent(
-      keyPress
-    );
+    document.dispatchEvent(jump);
+  } else {
+
   }
-  // } else {
-    // labelContainer.childNodes[0].innerHTML = "";
-  // }
 
   // finally draw the poses
   drawPose(pose);
