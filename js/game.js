@@ -2,12 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
-<<<<<<< HEAD
-=======
-
-var backendUrl = 'http://127.0.0.1:5000';
-
->>>>>>> caec23421b7ae9a502363c00ac2724287f48a5cf
 (function () {
     'use strict';
     /**
