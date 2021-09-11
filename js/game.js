@@ -794,7 +794,12 @@
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 let highScore = this.distanceMeter.setHighScore(this.highestScore);
-                fetch(`${backendUrl}/update-highscore/${highScore}`)
+
+                fetch(`${backendUrl}/update-highscore/${highScore}`, {
+                    headers: {
+                        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzMTM1NzE3NCwianRpIjoiOTE2NGRlMzEtZjYxMi00OTIzLTg3OTUtOTc0ZmQ2OTgzMTEwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX2lkIjoxfSwibmJmIjoxNjMxMzU3MTc0LCJleHAiOjE2MzE0NDM1NzR9.dhgLgXTdb2KJKwVLUdoGQqzeQClXQrgqrc3mBvPJOY0"
+                    }
+                })
                     .then(res => res.json())
                     .then(console.log);
             }
