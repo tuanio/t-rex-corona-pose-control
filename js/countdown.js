@@ -38,8 +38,11 @@ function initializeClock(id, endtime) {
     const timeinterval = setInterval(updateClock, 1000);
 }
 
+
+let deadline = new Date(Date.parse(new Date()) + (3600 * hours + 60 * minutes + seconds) * 1000);
+initializeClock('clockdiv', deadline)
+
 function startClock() {
-    initializeClock('clockdiv', deadline)
     console.log("Start clock")
 }
 
@@ -50,5 +53,3 @@ function stopClock() {
 function resetClock() {
     console.log("Reset clock")
 }
-
-let deadline = new Date(Date.parse(new Date()) + (3600 * hours + 60 * minutes + seconds) * 1000);
