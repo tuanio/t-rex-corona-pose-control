@@ -7,6 +7,9 @@ function getAccessToken() {
 }
 
 async function checkAuthorization() {
+    // tạm thời return true để không check đăng nhập
+    return true;
+    //
     let accessToken = getAccessToken();
     if (accessToken !== null) {
         let req = await fetch(`${backendUrl}/auth`, {
