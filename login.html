@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
@@ -16,7 +16,7 @@
             <div id = "header" class= header>
                 <h1>
                     <a class= "logo">
-                        <img src="/assets/ai.png", style="height: 150px";>
+                        <img src="/assets/ai.png" style="height: 150px">
                         <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
                             Artificial Intelligence</h2>
                     </a>
@@ -28,17 +28,17 @@
                     <div class="login-form">
                         <form action="" method="post">
                             <div class="input-box">
-                                <input type="text" placeholder="Tên Tài Khoản">
+                                <input type="text" id="username" placeholder="Tên Tài Khoản">
                             </div>
                             <div class="input-box">
-                                <input type="password" placeholder="Mật Khẩu">
+                                <input type="password" id="password" placeholder="Mật Khẩu">
                             </div>
                             <div class="container">
                                 <div id="login">
-                                    <button type="button" class="btn btn-outline-light text-dark">Đăng nhập</button>
+                                    <button id="submit-login" class="btn btn-outline-light text-dark">Đăng nhập</button>
                                 </div>
                                 <div id="button">
-                                    <button type="button" class="btn btn-outline-light text-dark">Đăng Ký</button>
+                                    <button id="redirect-register-btn" type="button" class="btn btn-outline-light text-dark">Đăng Ký</button>
                                 </div>
                             </div>
                                  
@@ -47,6 +47,8 @@
                 </div>
             </div>
         </div>
-        
+
+        <script src="js/utils.js"></script>
+        <script src="js/login.js"></script>
     </body>
 </html>

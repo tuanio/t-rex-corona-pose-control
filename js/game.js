@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
+
+
 (function () {
     'use strict';
     /**
@@ -71,7 +73,7 @@
             this.loadImages();
         }
     }
-    
+
     window['Runner'] = Runner;
 
 
@@ -789,15 +791,28 @@
             } else {
                 this.gameOverPanel.draw();
             }
+            
 
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 let highScore = this.distanceMeter.setHighScore(this.highestScore);
-                fetch(`${backendUrl}/update-highscore/${highScore}`)
-                    .then(res => res.json())
-                    .then(console.log);
             }
+
+            let thisTurnScore = this.distanceMeter.getActualScore(this.distanceRan);
+            (async () => {
+                let req = await fetch(`${backendUrl}/update-highscore/${thisTurnScore}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': "Bearer " + getAccessToken(),
+                        'Access-Control-Allow-Origin': backendUrl,
+                        'credentials': 'include',
+                        'cache': 'no-cache'
+                    }
+                });
+                let res = await req.json();
+                updateHighScore();
+            })();
 
 
             // Reset the time clock.
@@ -2086,6 +2101,16 @@
                 this.draw(i, parseInt(this.highScore[i], 10), true);
             }
             this.canvasCtx.restore();
+        },
+
+
+        /**
+         * 
+         *  
+         *  
+         */
+        getActualScore: function(distance) {
+            return this.getActualDistance(distance);
         },
 
         /**

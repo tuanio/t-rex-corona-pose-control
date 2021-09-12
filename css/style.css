@@ -7,7 +7,7 @@
 
 
 /* shake */
-.img-src {
+#brain {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
@@ -24,4 +24,45 @@
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+img#playTogether {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background-size: cover;
+  left: -20px;
+  bottom: 25px;
+}
+
+#brain {
+  position: absolute;
+  width: 20%;
+  height: 27%;
+  background-size: contain;
+  top: 20px;
+  left: 17px;
+  rotate: 90;
+}
+
+#state-jump {
+  display: block;
+  animation: shake 0.5s infinite;
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  background-size: cover;
+  top: 20px;
+  left: 250px;
+}
+
+#state-run {
+  display: block;
+  animation: shake 0.5s infinite;
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  background-size: cover;
+  top: 70px;
+  left: 250px;
 }
