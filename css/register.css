@@ -1,13 +1,9 @@
 *{
-    margin:0;
-    padding:0;
+    padding: 0;
     border:none;
     font-family: 'Open Sans', sans-serif;
 }
-body {
-    overflow: hidden;
-    background-color: #ededed;
-}
+
 .to {
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -18,8 +14,8 @@ body {
     border: 2px solid #80808000;
     grid-column: 6/9;
     grid-row: 3;
-    height: 600px;
-    width: 400px;
+    height: 700px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,20 +23,18 @@ body {
     border-radius: 15px;
     box-shadow: 0px 0px 14px 0px grey;
     background-color: white;
+    margin-top: -30px;
     margin-left: -100px;
+    background: linear-gradient(to right, #23b8fd, #f14bd6);
 }
 h2 {
     margin-top: 50px;
     margin-bottom: 30px;
 }
-i._Ai {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 25px;
-}
- 
+
 label {
-    margin-left: -200px;
+    
+    margin-left: -400px;
     display: block;
     font-weight: lighter;
  
@@ -48,17 +42,15 @@ label {
 input{
     display: block;
     border-bottom: 2px solid #00BCD4;
-    margin-top: 6px;
-    margin-bottom: 10px;
-    outline-style: none;
-}
-input[type="text"] {
-    padding: 5px;
-    width: 70%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    
 }
  
 input#submit {
     margin-left: -95px;
+    margin-bottom: 30px;
     padding: 10px;
     width: 50%;
     border-radius: 10px;
@@ -71,13 +63,48 @@ input#submit {
 input#submit:hover{
     background: linear-gradient(to right, #fc466b, #3f5efb); 
 }
-#icon {
+.icon {
     display: flex;
     margin-top: 20px;
+    margin-bottom: 30px;
+    background-image: none;
 }
-.icon-boy {
-    margin-right: 80px;
+.button1 {
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.button2 {
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 h2.class {
     margin-bottom: 10px;
+}
+
+.container {
+    text-align: center;
+    align-items: center;
+}
+.input-box{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    width: 400px;
+}
+.input-box input{
+    padding: 7px 15px;
+    width: 100%;
+    border: 2px solid #cccccc;
+    outline: none;
+    margin-top: 20px;
+}
+.dropdown {
+    margin-bottom: 130px;
+}
+.gender{
+    text-align: center;
+    margin-bottom: 20px
+}
+.btn btn-outline-light text-dark.register{
+    margin-top: -50px;
 }

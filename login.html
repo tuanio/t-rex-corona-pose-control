@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
     </head>
     <body>
@@ -13,34 +17,36 @@
                 <h1>
                     <a class= "logo">
                         <img src="/assets/ai.png", style="height: 150px";>
-                        <h2>Artificial Intelligence</h2>
+                        <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                            Artificial Intelligence</h2>
                     </a>
                 </h1>
             </div>
             <div id="main-panel">
                 <div class="class-content", style="top: 31px;">
-                    <h2 class="title">Đăng Nhập</h2>
+                        <h2 class="title">Đăng Nhập</h2>
                     <div class="login-form">
                         <form action="" method="post">
                             <div class="input-box">
-                                <i ></i>
-                                <input type="text" placeholder="Nhập username">
+                                <input type="text" placeholder="Tên Tài Khoản">
                             </div>
                             <div class="input-box">
-                                <i ></i>
-                                <input type="password" placeholder="Nhập mật khẩu">
+                                <input type="password" placeholder="Mật Khẩu">
                             </div>
-                            <div class="btn-box">
-                                <button type="submit">
-                                    Đăng nhập
-                                </button>
+                            <div class="container">
+                                <div id="login">
+                                    <button type="button" class="btn btn-outline-light text-dark">Đăng nhập</button>
+                                </div>
+                                <div id="button">
+                                    <button type="button" class="btn btn-outline-light text-dark">Đăng Ký</button>
+                                </div>
                             </div>
+                                 
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-            
-
+        
     </body>
 </html>
