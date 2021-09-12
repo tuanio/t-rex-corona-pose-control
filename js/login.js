@@ -1,6 +1,4 @@
-checkAuthorization();
-
-let submitLogin = document.querySelector("button#submit-login");
+checkAuthorization();   
 
 async function checkPassword(requestJson) {
     let url = `${backendUrl}/login`;
@@ -14,20 +12,31 @@ async function checkPassword(requestJson) {
     alert(res['msg']);
     if (res['code'] === 1) {
         localStorage.setItem('Authorization', res['data']['access_token']);
-        localStorage.setItem('Authorization', res['data']['user_name']);
+        localStorage.setItem('username', requestJson['username']);
         window.location.href = `${frontendUrl}/index.html`;
     }
 }
 
-submitLogin.addEventListener("click", (e) => {
-    e.preventDefault();
+(async () => {
+    let submitLogin = await document.querySelector("button#submit-login");
+    submitLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+    
+        let username = document.querySelector("#username").value;
+        let password = document.querySelector("#password").value;
+    
+        requestJson = {
+            username: username,
+            password: password
+        }
+        checkPassword(requestJson);
+    });
+})();
 
-    let username = document.querySelector("#username").value;
-    let password = document.querySelector("#password").value;
-
-    requestJson = {
-        username: username,
-        password: password
-    }
-    checkPassword(requestJson);
-});
+// redirect to 
+(async () => {
+    let redirectRegisterBtn = await document.querySelector("#redirect-register-btn");
+    redirectRegisterBtn.addEventListener("click", () => {
+        window.location.href = frontendUrl + "/register.html";
+    });
+})();

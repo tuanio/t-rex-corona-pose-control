@@ -792,28 +792,27 @@
                 this.gameOverPanel.draw();
             }
             
+
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 let highScore = this.distanceMeter.setHighScore(this.highestScore);
-
-                (async () => {
-                    let req = await fetch(`${backendUrl}/update-highscore/${highScore}`, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': "Bearer " + getAccessToken(),
-                            'Access-Control-Allow-Origin': backendUrl,
-                            'credentials': 'include',
-                            'cache': 'no-cache'
-                        }
-                    });
-                    let res = await req.json();
-                    console.log(res);
-                    updateHighScore();
-                })();
-
-
             }
+
+            let thisTurnScore = this.distanceMeter.getActualScore(this.distanceRan);
+            (async () => {
+                let req = await fetch(`${backendUrl}/update-highscore/${thisTurnScore}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': "Bearer " + getAccessToken(),
+                        'Access-Control-Allow-Origin': backendUrl,
+                        'credentials': 'include',
+                        'cache': 'no-cache'
+                    }
+                });
+                let res = await req.json();
+                updateHighScore();
+            })();
 
 
             // Reset the time clock.
@@ -2102,6 +2101,16 @@
                 this.draw(i, parseInt(this.highScore[i], 10), true);
             }
             this.canvasCtx.restore();
+        },
+
+
+        /**
+         * 
+         *  
+         *  
+         */
+        getActualScore: function(distance) {
+            return this.getActualDistance(distance);
         },
 
         /**
