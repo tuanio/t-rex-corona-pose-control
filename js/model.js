@@ -33,7 +33,7 @@ async function init() {
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   window.requestAnimationFrame(loop);
-
+  ring(2); // đang chạy
   // append/get elements to the DOM
   const canvas = document.getElementById("canvas");
   canvas.width = width; canvas.height = height;
@@ -55,8 +55,9 @@ async function predict() {
 
   if (prediction[0].probability >= 0.5) {
     document.dispatchEvent(jump);
+    ring(1); // đang nhảy
   } else {
-
+    ring(2); // đang chạy
   }
 
   // finally draw the poses

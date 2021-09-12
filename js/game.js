@@ -774,9 +774,11 @@
          * Game over state.
          */
         gameOver: function () {
+            ring(3); // chết
+            
             this.playSound(this.soundFx.HIT);
             vibrate(200);
-
+            
             this.stop();
             this.crashed = true;
             this.distanceMeter.acheivement = false;
@@ -791,7 +793,6 @@
             } else {
                 this.gameOverPanel.draw();
             }
-            
 
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
