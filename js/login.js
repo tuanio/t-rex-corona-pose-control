@@ -4,7 +4,6 @@ async function checkPassword(requestJson) {
     let url = `${backendUrl}/login`;
     let req = await fetch(url, {
         method: "POST",
-        credentials: "include",
         body: JSON.stringify(requestJson),
         cache: "no-cache",
     });
@@ -20,7 +19,6 @@ async function checkPassword(requestJson) {
 (async () => {
     let submitLogin = await document.querySelector("button#submit-login");
     submitLogin.addEventListener("click", (e) => {
-        e.preventDefault();
     
         let username = document.querySelector("#username").value;
         let password = document.querySelector("#password").value;
