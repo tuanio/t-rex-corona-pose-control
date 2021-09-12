@@ -32,3 +32,11 @@ async function checkPassword(requestJson) {
         checkPassword(requestJson);
     });
 })();
+
+// redirect to 
+(async () => {
+    let redirectRegisterBtn = await document.querySelector("#redirect-register-btn");
+    redirectRegisterBtn.addEventListener("click", () => {
+        window.location.href = frontendUrl + "/register.html";
+    });
+})();
