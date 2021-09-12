@@ -7,24 +7,31 @@ function getAccessToken() {
 }
 
 async function checkAuthorization() {
-    let req = await fetch(`${backendUrl}/auth`, {
-        method: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + getAccessToken()
+    let accessToken = getAccessToken();
+    if (accessToken !== null) {
+        let req = await fetch(`${backendUrl}/auth`, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken
+            }
+        });
+        let res = await req.json();
+        if (res['msg'] == "Missing Authorization Header") {
+            if (window.location.href !== loginUrl) {
+                window.location.href = loginUrl;
+            }
+            return false;
+        } else if (res['msg'] === 'Tài khoản hiện tại') {
+            if (window.location.href !== frontendUrl + '/') {
+                window.location.href = frontendUrl;
+            }
+            return true;
         }
-    });
-    let res = await req.json();
-    if (res['msg'] == "Missing Authorization Header") {
+    } else {
         if (window.location.href !== loginUrl) {
             window.location.href = loginUrl;
+            return false;
         }
-        return false;
-    }
-    if (res['msg'] !== 'Tài khoản hiện tại') {
-        return false;
     } 
-    if (window.location.href !== frontendUrl) {
-        window.location.href = frontendUrl;
-    }
     return true;
 }
