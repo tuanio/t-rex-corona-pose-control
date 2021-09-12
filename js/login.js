@@ -1,20 +1,22 @@
+checkAuthorization();
+
 let submitLogin = document.querySelector("button#submit-login");
 
-function checkPassword(requestJson) {
+async function checkPassword(requestJson) {
     let url = `${backendUrl}/login`;
-    fetch(url, {
+    let req = await fetch(url, {
         method: "POST",
         credentials: "include",
         body: JSON.stringify(requestJson),
         cache: "no-cache",
-    })
-        .then(res => res.json())
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((error) => {
-            console.log("error: ", error);
-        });
+    });
+    let res = await req.json();
+    alert(res['msg']);
+    if (res['code'] === 1) {
+        localStorage.setItem('Authorization', res['data']['access_token']);
+        localStorage.setItem('Authorization', res['data']['user_name']);
+        window.location.href = `${frontendUrl}/index.html`;
+    }
 }
 
 submitLogin.addEventListener("click", (e) => {

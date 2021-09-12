@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
+
+
 (function () {
     'use strict';
     /**
@@ -71,7 +73,7 @@
             this.loadImages();
         }
     }
-    
+
     window['Runner'] = Runner;
 
 
@@ -789,19 +791,28 @@
             } else {
                 this.gameOverPanel.draw();
             }
-
+            
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 let highScore = this.distanceMeter.setHighScore(this.highestScore);
 
-                fetch(`${backendUrl}/update-highscore/${highScore}`, {
-                    headers: {
-                        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzMTM1NzE3NCwianRpIjoiOTE2NGRlMzEtZjYxMi00OTIzLTg3OTUtOTc0ZmQ2OTgzMTEwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ1c2VyX2lkIjoxfSwibmJmIjoxNjMxMzU3MTc0LCJleHAiOjE2MzE0NDM1NzR9.dhgLgXTdb2KJKwVLUdoGQqzeQClXQrgqrc3mBvPJOY0"
-                    }
-                })
-                    .then(res => res.json())
-                    .then(console.log);
+                (async () => {
+                    let req = await fetch(`${backendUrl}/update-highscore/${highScore}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': "Bearer " + getAccessToken(),
+                            'Access-Control-Allow-Origin': backendUrl,
+                            'credentials': 'include',
+                            'cache': 'no-cache'
+                        }
+                    });
+                    let res = await req.json();
+                    console.log(res);
+                    updateHighScore();
+                })();
+
+
             }
 
 

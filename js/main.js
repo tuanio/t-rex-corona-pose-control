@@ -1,6 +1,23 @@
+let updateHighScore = async () => {
+  let val = await document.querySelector("#highest-score");
+  let req = await fetch(`${backendUrl}/get-highscore`, {
+    method: 'GET',
+    headers: {
+      'Authorization': "Bearer " + getAccessToken(),
+      'Access-Control-Allow-Origin': backendUrl,
+      'credentials': 'include',
+      'cache': 'no-cache'
+    }
+  });
+  let res = await req.json();
+  val.innerHTML = await res['data']['score'];
+};
+
+updateHighScore();
+
 let btnPlay = document.querySelector("button#btn-play");
 btnPlay.addEventListener("click", () => {
-  btnPlay.innerText = "Nguyen Van Anh Tuan is playing ...";
+  btnPlay.innerText = localStorage.getItem('username') + " is playing ...";
   btnPlay.disabled = true;
 });
 
