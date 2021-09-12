@@ -28,41 +28,67 @@
 
 img#playTogether {
   position: absolute;
-  width: 40%;
-  height: 40%;
-  background-size: cover;
-  left: -20px;
-  bottom: 25px;
+  width: 423px;
+  height: 174px;
+  left: 63px;
+  top: 368px;
+  bottom: 522px;
+  background-size: contain;
 }
 
 #brain {
   position: absolute;
-  width: 20%;
-  height: 27%;
+  width: 270px;
+  height: 190px;
+  left: 38x;
+  top: 25px;
+  bottom: 195px;
   background-size: contain;
-  top: 20px;
-  left: 17px;
-  rotate: 90;
+  transform: rotate(360deg);
 }
 
 #state-jump {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 210px;
+  top: 62px;
+  bottom: 34px;
   display: block;
   animation: shake 0.5s infinite;
-  position: absolute;
-  width: 10%;
-  height: 10%;
-  background-size: cover;
-  top: 20px;
-  left: 250px;
+  background-size: contain;
 }
 
 #state-run {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  left: 210px;
+  top: 62px;
+  bottom: 34px;
   display: block;
   animation: shake 0.5s infinite;
+  background-size: contain;
+}
+
+#state-dead {
+  display: none;
   position: absolute;
-  width: 10%;
-  height: 10%;
-  background-size: cover;
-  top: 70px;
-  left: 250px;
+  width: 200px;
+  height: 100px;
+  left: 215px;
+  top: 62px;
+  bottom: 34px;
+  animation: shake 0.5s infinite;
+}
+
+#account {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  left: 1280px;
+  top: 17px;
+  bottom: 66px;
+  display: block;
+  cursor: pointer;
 }
