@@ -19,6 +19,20 @@
 <body id="t" class="offline">
 
     <div id="container">
+        <!-- logo account -->
+        <div id="account-div">
+            <image id="account-img" src="./assets/account.png" type="botton" />
+        </div>
+        <!-- account info -->
+        <div id='form-box'>
+            <p id="info">Info</p>
+            <p id="name">Tên: xxx</p>
+            <p id="gender">Giới tính: xxx</p>
+            <p id="khoa">Khóa: xxx</p>
+
+            <button id="account-button">Sign out</button>
+        </div>
+    
         <div id="main-frame-error" class="interstitial-wrapper">
             <div id="main-content">
                 <div class="icon icon-offline" alt=""></div>
@@ -39,7 +53,6 @@
     </div>
 
     
-
     <div id="camera" class="d-grid gap-2 col-4 mx-auto">
         <div>
             <span>Điểm cao nhất của bạn: </span>
@@ -65,15 +78,6 @@
         <image id="state-jump" src="./assets/jumping.png"/>
         <image id="state-run" src="./assets/running.png"/>
         <image id="state-dead" src="./assets/inflection.png"/>
-    </div>
-
-    <div>
-        <image class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" id="account" src="./assets/account.png" role="button"/>
-        <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            THÔNG TIN TÀI KHOẢN!
-        </div>
-        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
