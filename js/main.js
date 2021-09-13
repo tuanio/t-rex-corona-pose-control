@@ -24,7 +24,7 @@ btnPlay.addEventListener("click", () => {
 });
 
 // Hiệu ứng đám mây
-async function ring(state) {
+async function ring(state=0) {
   let run = await document.querySelector('img#state-run');
   let jump = await document.querySelector('img#state-jump');
   let dead = await document.querySelector('img#state-dead');
@@ -51,8 +51,6 @@ async function ring(state) {
   }
   // Đang chết
   else {
-    brain.style.animation = 'shake 0.5s infinite';
-    dead.style.animation = 'shake-up 0.5s infinite';
     jump.style.display = 'none';
     run.style.display = 'none';
     dead.style.display = 'block';
