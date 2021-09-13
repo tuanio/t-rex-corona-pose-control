@@ -28,6 +28,7 @@ async function ring(state) {
   let run = await document.querySelector('img#state-run');
   let jump = await document.querySelector('img#state-jump');
   let dead = await document.querySelector('img#state-dead');
+  let brain = await document.querySelector('img#brain');
 
   // Chưa chơi
   if (state == 0) {
@@ -37,24 +38,28 @@ async function ring(state) {
   }
   // Đang nhảy
   else if (state == 1) {
+    brain.style.animation = 'shake 0.5s infinite'
     jump.style.display = 'block';
     run.style.display = 'none';
+    dead.style.display = 'none';
   }
   // Đang chạy
   else if (state == 2) {
     jump.style.display = 'none';
     run.style.display = 'block';
+    dead.style.display = 'none';
   }
   // Đang chết
   else {
+    brain.style.animation = 'shake 0.5s infinite';
+    dead.style.animation = 'shake-up 0.5s infinite';
     jump.style.display = 'none';
     run.style.display = 'none';
     dead.style.display = 'block';
   }
 
 }
-
-ring(0);
+ring(3);
 
 function account_info() {
   alert('Hello !');
