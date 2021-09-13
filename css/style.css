@@ -96,7 +96,7 @@ img#playTogether {
 }
 
 #account {
-  position: absolute;
+  position: top right;
   width: 60px;
   height: 50px;
   left: 1280px;
