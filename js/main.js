@@ -24,10 +24,11 @@ btnPlay.addEventListener("click", () => {
 });
 
 // Hiệu ứng đám mây
-async function ring(state) {
+async function ring(state=0) {
   let run = await document.querySelector('img#state-run');
   let jump = await document.querySelector('img#state-jump');
   let dead = await document.querySelector('img#state-dead');
+  let brain = await document.querySelector('img#brain');
 
   // Chưa chơi
   if (state == 0) {
@@ -37,13 +38,16 @@ async function ring(state) {
   }
   // Đang nhảy
   else if (state == 1) {
+    brain.style.animation = 'shake 0.5s infinite'
     jump.style.display = 'block';
     run.style.display = 'none';
+    dead.style.display = 'none';
   }
   // Đang chạy
   else if (state == 2) {
     jump.style.display = 'none';
     run.style.display = 'block';
+    dead.style.display = 'none';
   }
   // Đang chết
   else {
@@ -53,8 +57,7 @@ async function ring(state) {
   }
 
 }
-
-ring(0);
+ring(3);
 
 function account_info() {
   alert('Hello !');
