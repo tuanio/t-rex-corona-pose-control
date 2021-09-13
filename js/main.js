@@ -59,7 +59,7 @@ async function ring(state) {
   }
 
 }
-ring(0);
+ring(3);
 
 function account_info() {
   alert('Hello !');
