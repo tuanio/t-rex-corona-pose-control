@@ -92,18 +92,19 @@ img#playTogether {
   display: block;
   cursor: pointer;
 }
-#btn-play:before {
-  background-color: black;
-}
-#btn-play:hover {
-  color: rgb(0, 0, 0) !important;
-}
 #btn-play {
   color:rgb(255, 255, 255);
   font-size: 30px;
   background-image: linear-gradient(rgb(10, 74, 248), rgb(226, 178, 186));
   text-shadow: 2px 2px 10px #000;
 }
+#btn-play:before {
+  background-color: black;
+}
+#btn-play:hover {
+  color: rgb(0, 0, 0) !important;
+}
+
 .cachchoi {
   padding-right: 3px;
   padding-left: 1600px;
