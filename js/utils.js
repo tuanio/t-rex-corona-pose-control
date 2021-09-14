@@ -1,5 +1,5 @@
 // var frontendUrl = 'http://127.0.0.1:5501';
-var frontendUrl = 'https://tuanio.github.io/t-rex-corona-pose-control'
+var frontendUrl = 'https://corona-runner.vercel.app'
 // var backendUrl = 'http://127.0.0.1:5000';
 var backendUrl = 'https://backend-runner.herokuapp.com';
 var loginUrl = frontendUrl + '/login.html';
