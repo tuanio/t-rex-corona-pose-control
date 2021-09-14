@@ -79,3 +79,7 @@ function checkUsernameSize() {
         }
     });
 })();
+
+function toLogin() {
+    window.location.href = frontendUrl + '/login.html';
+}
