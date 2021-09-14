@@ -21,13 +21,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
     <style>
-        body {
+        /* body {
             background-image: url(./assets/palm-tree-transparent-background_1308-63035-removebg-preview.png);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             top: 30%;
-        }
+        } */
     </style>
 
 </head>
@@ -42,42 +42,25 @@
             <image id="state-run" src="./assets/running.png" />
             <image id="state-dead" src="./assets/inflection.png" />
         </div>
-        <div class="acount_info">
-            <image class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" id="account"
-                src="./assets/account.png" role="button" />
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                    THÔNG TIN TÀI KHOẢN!
-                </div>
-            </div>
-        </div>
-        <!-- ảnh sử dụng -->
         <div class="cachchoi">
             <img src="./assets/cách chơi.jpg">
-        </div>
-        <!-- BS,Virus -->
-        <div>
-            <img src="assets/BS.jpg" class="BS">
-            <img src="./assets/virus-removebg-preview.png" class="virus">
-        </div>
-        <!-- bãi cỏ -->
-        <div>
-            <img src="./assets/glass.png" class="picture_glass">
         </div>
     </div>
 
     <div id="container">
         <!-- logo account -->
         <div id="account-div">
-            <image id="account-img" src="./assets/account.png" type="botton" />
-        </div>
-        <!-- account info -->
-        <div id='form-box'>
-            <p id="info">Info</p>
-            <p id="name">Tên: xxx</p>
-            <p id="gender">Giới tính: xxx</p>
-            <p id="khoa">Khóa: xxx</p>
-            <button id="account-button">Sign out</button>
+            <div id="account-div">
+                <image id="account-img" src="./assets/account.png" type="botton" />
+            </div>
+            <!-- account info -->
+            <div id='form-box'>
+                <p id="info">Info</p>
+                <p id="name">Tên: xxx</p>
+                <p id="gender">Giới tính: xxx</p>
+                <p id="khoa">Khóa: xxx</p>
+                <button id="account-button">Sign out</button>
+            </div>
         </div>
 
         <div id="main-frame-error" class="interstitial-wrapper">
@@ -97,25 +80,19 @@
                 </template>
             </div>
         </div>
-    </div>
-
-    <div id="camera" class="d-grid gap-2 col-4 mx-auto">
-        <div>
-            <span class="diemso"><b>Điểm cao nhất của bạn: </b></span>
-            <span id="highest-score" class="diemso"><b>0</b></span>
+        <div id="camera" class="d-grid gap-2 col-4 mx-auto">
+            <div>
+                <span class="diemso"><b>Điểm cao nhất của bạn: </b></span>
+                <span id="highest-score" class="diemso"><b>0</b></span>
+            </div>
+            <button type="button" class="btn btn-outline-primary" id="btn-play" onclick="init()">
+                <i class="fas fa-play-circle"></i>
+                <i class="fas fa-video"></i>
+            </button>
+            <div style="margin: 0 auto;">
+                <canvas id="canvas" class="img-thumbnail"></canvas>
+            </div>
         </div>
-        <button type="button" class="btn btn-outline-primary" id="btn-play" onclick="init()">
-            <i class="fas fa-play-circle"></i>
-            <i class="fas fa-video"></i>
-        </button>
-        <div style="margin: 0 auto;">
-            <canvas id="canvas" class="img-thumbnail"></canvas>
-        </div>
-    </div>
-
-    <!-- Hiển thị ảnh chơi cùng nhau -->
-    <div class='playTogether'>
-        <image id="playTogether" src="./assets/family-play-video-game.jpg" alt="Playtogether" />
     </div>
 
     <!-- Ảnh brain-->
