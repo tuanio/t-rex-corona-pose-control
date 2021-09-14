@@ -29,7 +29,6 @@ async function ring(state = 0) {
   let run = await document.querySelector('img#state-run');
   let jump = await document.querySelector('img#state-jump');
   let dead = await document.querySelector('img#state-dead');
-  let brain = await document.querySelector('img#brain');
 
   // Chưa chơi
   if (state == 0) {
@@ -86,9 +85,18 @@ setInterval(() => { // chặn nút chơi của người dùng
   }
 }, 500)
 
-// async function account() {
-//   let loc_account = await document.getElementByIdt('account');
-//   if (loc_account.onclick == true) {
-//     account_info();
-//   }
-// }
+// sign out button
+let signOut = document.querySelector('button#sign-out');
+signOut.onclick = function refreshAccount() {
+  localStorage.removeItem('Authorization');
+  localStorage.removeItem('username');
+  location.reload();
+}
+
+// show username in account info
+async function show_username() {
+  let nameuser = localStorage.getItem('username');
+  let name_location = await document.querySelector('p#name');
+  name_location.innerText = "Tên: " + nameuser;
+}
+show_username();

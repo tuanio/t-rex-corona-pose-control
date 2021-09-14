@@ -18,42 +18,37 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/game.css">
-    <!-- <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body id="t" class="offline">
 
     <div id="decorator">
-        
+        <!-- logo account -->
+        <div id="account-div">
+            <image id="account-img" src="./assets/account.png" type="botton" />
+        </div>
+        <!-- account info -->
+        <div id='form-box'>
+            <p id="info">Info</p>
+            <p id="name">Tên: null</p>
+            <button id="sign-out">Sign out</button>
+        </div>
+        <!-- Ảnh brain-->
         <div id="rang">
             <image id="brain" src="./assets/brain.png" />
             <image id="state-jump" src="./assets/jumping.png" />
             <image id="state-run" src="./assets/running.png" />
-            <image id="state-dead" src="./assets/inflection.png" />
+            <image id="state-dead" src="./assets/inflection.jpg" />
         </div>
-        <div class="cachchoi">
-            <img src="assets/gameplay.jpg">
-        </div>
+
+        <img id="cach-choi" src="assets/gameplay.jpg">
+        <img id="doctor" src="./assets/doctor.png">
     </div>
 
     <div id="container">
-        <!-- logo account -->
-        <div id="account-div">
-            <div id="account-div">
-                <image id="account-img" src="./assets/account.png" type="botton" />
-            </div>
-        
-            <div id='form-box'>
-                <p id="info">Info</p>
-                <p id="name">Tên: xxx</p>
-                <p id="gender">Giới tính: xxx</p>
-                <p id="khoa">Khóa: xxx</p>
-                <button id="account-button">Sign out</button>
-            </div>
-        </div>
-
         <div id="main-frame-error" class="interstitial-wrapper">
             <div id="main-content">
                 <div class="icon icon-offline" alt=""></div>
@@ -84,14 +79,6 @@
                 <canvas id="canvas" class="img-thumbnail"></canvas>
             </div>
         </div>
-    </div>
-
-    
-    <div id="rang">
-        <image id="brain" src="./assets/brain.png" />
-        <image id="state-jump" src="./assets/jumping.png" />
-        <image id="state-run" src="./assets/running.png" />
-        <image id="state-dead" src="./assets/inflection.png" />
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

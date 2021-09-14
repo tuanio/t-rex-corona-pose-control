@@ -5,12 +5,13 @@
   padding: 5px;
 }
 
-
-/* shake */
-/* #brain {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-} */
+img#cach-choi {
+  position: absolute;
+  width: 20.75em;
+  height: 20.75em;
+  right: 0;
+  margin-top: 15rem;
+}
 
 @keyframes shake-near {
   from {left: 13.125em}
@@ -37,7 +38,7 @@ img#playTogether {
   position: absolute;
   width: 16.875em;
   height: 11.875em;
-  left: 0.3em;
+  left: 0em;
   top: 1.563em;
   bottom: 12.188em;
   background-size: contain;
@@ -48,7 +49,7 @@ img#playTogether {
   position: absolute;
   width: 12.5em;
   height: 6.25em;
-  left: 13.125em;
+  left: 12.5em;
   top: 3.875em;
   bottom: 2.125em;
   display: block;
@@ -60,7 +61,7 @@ img#playTogether {
   position: absolute;
   width: 12.5em;
   height: 6.25em;
-  left: 13.125em;
+  left: 12.5em;
   top: 3.875em;
   bottom: 2.125em;
   display: block;
@@ -72,58 +73,72 @@ img#playTogether {
   position: absolute;
   width: 12.5em;
   height: 6.25em;
-  left: 13.125em;
+  left: 12.5em;
   top: 3.875em;
   bottom: 2.125em;
 }
 
 #account-img {
-  width: 3.563em;
-  height: 2.75em;
-  margin-top: 1.25em;
-  margin-left: 80.625em;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
   cursor: pointer;
+  right: 1.5rem;
+  top: 1rem;
 }
 
 #form-box {
   display: none;
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
-  width:15.625em;
+  width: 10.625em;
+  height: 12em;
   background: rgba(0, 0, 0, 0.8);
-  margin-top: 0em;
-  margin-left: 65.625em;
   padding: 2.5em 0;
   color: #fff;
   box-shadow: 0 0 1.25em 0.125em rgba(0, 0, 0, 0.5);
   border-radius: 1.25em;
   float: right;
-  letter-spacing: 0.125em;
+  letter-spacing: 0.01em;
+  top: 0.5rem;
+  right: 5rem;
 }
 
 p#info {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 p#name {
   margin: 1.25em;
+  font-size: 1em;
 }
 
 p#gender {
   margin: 1.25em;
+  font-size: 1em;
 }
 
 p#khoa {
   margin: 1.25em;
+  font-size: 1em;
 }
 
-button#account-button{
+button#sign-out {
   width: 5em;
   height: 1.875em;
   cursor: pointer;
   font-weight: bold;
   background-color: purple;
   border-radius: 0.188em;
-  margin: 1.25em;
+  margin-top: 0em;
+  margin-left: 1.25em;
 }
+
+img#doctor {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: 0;
+}
+
