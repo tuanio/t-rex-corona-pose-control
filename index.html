@@ -9,14 +9,61 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(./assets/palm-tree-transparent-background_1308-63035-removebg-preview.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            top: 30%;
+        }
+    </style>
 
 </head>
 
 <body id="t" class="offline">
+
+    <div id="decorator">
+        <!-- Ảnh brain-->
+        <div id="rang">
+            <image id="brain" src="./assets/brain.png" />
+            <image id="state-jump" src="./assets/jumping.png" />
+            <image id="state-run" src="./assets/running.png" />
+            <image id="state-dead" src="./assets/inflection.png" />
+        </div>
+        <div class="acount_info">
+            <image class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" id="account"
+                src="./assets/account.png" role="button" />
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    THÔNG TIN TÀI KHOẢN!
+                </div>
+            </div>
+        </div>
+        <!-- ảnh sử dụng -->
+        <div class="cachchoi">
+            <img src="./assets/cách chơi.jpg">
+        </div>
+        <!-- BS,Virus -->
+        <div>
+            <img src="assets/BS.jpg" class="BS">
+            <img src="./assets/virus-removebg-preview.png" class="virus">
+        </div>
+        <!-- bãi cỏ -->
+        <div>
+            <img src="./assets/glass.png" class="picture_glass">
+        </div>
+    </div>
 
     <div id="container">
         <!-- logo account -->
@@ -54,11 +101,12 @@
     
     <div id="camera" class="d-grid gap-2 col-4 mx-auto">
         <div>
-            <span>Điểm cao nhất của bạn: </span>
-            <span id="highest-score">0</span>
+            <span class="diemso"><b>Điểm cao nhất của bạn: </b></span>
+            <span id="highest-score" class="diemso"><b>0</b></span>
         </div>
         <button type="button" class="btn btn-outline-primary" id="btn-play" onclick="init()">
-            Play
+            <i class="fas fa-play-circle"></i>
+            <i class="fas fa-video"></i>
         </button>
         <div style="margin: 0 auto;">
             <canvas id="canvas" class="img-thumbnail"></canvas>
