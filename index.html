@@ -66,6 +66,19 @@
     </div>
 
     <div id="container">
+        <!-- logo account -->
+        <div id="account-div">
+            <image id="account-img" src="./assets/account.png" type="botton" />
+        </div>
+        <!-- account info -->
+        <div id='form-box'>
+            <p id="info">Info</p>
+            <p id="name">Tên: xxx</p>
+            <p id="gender">Giới tính: xxx</p>
+            <p id="khoa">Khóa: xxx</p>
+            <button id="account-button">Sign out</button>
+        </div>
+    
         <div id="main-frame-error" class="interstitial-wrapper">
             <div id="main-content">
                 <div class="icon icon-offline" alt=""></div>
@@ -85,6 +98,7 @@
         </div>
     </div>
 
+    
     <div id="camera" class="d-grid gap-2 col-4 mx-auto">
         <div>
             <span class="diemso"><b>Điểm cao nhất của bạn: </b></span>
@@ -99,16 +113,25 @@
         </div>
     </div>
 
+    <!-- Hiển thị ảnh chơi cùng nhau -->
+    <div class='playTogether'>
+        <image  id="playTogether" src="./assets/family-play-video-game.jpg"
+        alt="Playtogether"/>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <!-- Ảnh brain-->
+    <div id="rang">
+        <image id="brain" src="./assets/brain.png"/>
+        <image id="state-jump" src="./assets/jumping.png"/>
+        <image id="state-run" src="./assets/running.png"/>
+        <image id="state-dead" src="./assets/inflection.png"/>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
