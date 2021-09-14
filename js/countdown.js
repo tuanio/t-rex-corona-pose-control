@@ -1,6 +1,6 @@
 let hours = 0
-let minutes = 5
-let seconds = 0
+let minutes = 0
+let seconds = 10
 let timeinterval = undefined
 
 function getTimeRemaining(endtime) {
@@ -31,10 +31,25 @@ function initializeClock(id, endtime) {
         secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
         if (t.total <= 0) {
+            (async () => {
+                let req = await fetch(backendUrl + '/disable-all-user', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': "Bearer " + getAccessToken(),
+                        'Access-Control-Allow-Origin': backendUrl,
+                        'credentials': 'include',
+                        'cache': 'no-cache'
+                    }
+                });
+                let res = await req.json();
+                if (localStorage.getItem('is_super') === "false") {
+                    localStorage.setItem('userDisabled', true); // chỉ người dùng bị chứ super user không bị
+                }
+            })();
             clearInterval(timeinterval);
         }
     }
-    
+
     updateClock();
     timeinterval = setInterval(updateClock, 1000);
 }
@@ -43,6 +58,23 @@ function initializeClock(id, endtime) {
 function startClock() {
     console.log("Start clock")
     let deadline = new Date(Date.parse(new Date()) + (3600 * hours + 60 * minutes + seconds) * 1000);
+
+    (async () => {
+        let req = await fetch(backendUrl + '/enable-all-user', {
+            method: 'GET',
+            headers: {
+                'Authorization': "Bearer " + getAccessToken(),
+                'Access-Control-Allow-Origin': backendUrl,
+                'credentials': 'include',
+                'cache': 'no-cache'
+            }
+        });
+        let res = await req.json();
+        if (localStorage.getItem('userDisabled')) {
+            localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
+        }
+    })();
+
     initializeClock('clockdiv', deadline)
 
     // let accessToken = getAccessToken();
@@ -55,7 +87,7 @@ function startClock() {
     //     });
     // }
 
-    
+
 }
 
 function stopClock() {

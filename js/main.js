@@ -1,4 +1,5 @@
 checkAuthorization();
+var count = 0;
 
 let updateHighScore = async () => {
   let val = await document.querySelector("#highest-score");
@@ -24,7 +25,7 @@ btnPlay.addEventListener("click", () => {
 });
 
 // Hiệu ứng đám mây
-async function ring(state=0) {
+async function ring(state = 0) {
   let run = await document.querySelector('img#state-run');
   let jump = await document.querySelector('img#state-jump');
   let dead = await document.querySelector('img#state-dead');
@@ -58,20 +59,32 @@ async function ring(state=0) {
   }
 
 }
+
 ring(0);
 
-let account_btn = document.querySelector('#account-img');
-let account_info = document.querySelector('#form-box');
-var count = 0;
-account_btn.onclick = function show_info() {
-  if (count%2 == 0) {
-    account_info.style.display = 'block';
+(async () => {
+  let account_btn = document.querySelector('#account-img');
+  let account_info = document.querySelector('#form-box');
+  if (account_btn) {
+    account_btn.addEventListener("click", () => {
+      if (count % 2 == 0) {
+        account_info.style.display = 'block';
+      } else {
+        account_info.style.display = 'none';
+      }
+      count += 1;
+    });
   }
-  else {
-    account_info.style.display = 'none';
+})();
+
+setInterval(() => { // chặn nút chơi của người dùng
+  let btnPlay = document.querySelector("button#btn-play");
+  if (localStorage.getItem('userDisabled') == 'true') {
+    btnPlay.disabled = true;
+  } else {
+    btnPlay.disabled = false;
   }
-  count += 1;
-}
+}, 500)
 
 // async function account() {
 //   let loc_account = await document.getElementByIdt('account');

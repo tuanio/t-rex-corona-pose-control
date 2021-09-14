@@ -12,6 +12,7 @@ async function checkPassword(requestJson) {
     if (res['code'] === 1) {
         localStorage.setItem('Authorization', res['data']['access_token']);
         localStorage.setItem('username', requestJson['username']);
+        localStorage.setItem('is_super', res['data']['is_super']);
         window.location.href = `${frontendUrl}/index.html`;
     }
 }
