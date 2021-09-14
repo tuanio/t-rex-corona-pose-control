@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title>Corona runner</title>
-    <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/main.css">
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -19,6 +17,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <style>
         body {
             background-image: url(./assets/palm-tree-transparent-background_1308-63035-removebg-preview.png);
@@ -78,7 +79,7 @@
             <p id="khoa">Khóa: xxx</p>
             <button id="account-button">Sign out</button>
         </div>
-    
+
         <div id="main-frame-error" class="interstitial-wrapper">
             <div id="main-content">
                 <div class="icon icon-offline" alt=""></div>
@@ -98,7 +99,6 @@
         </div>
     </div>
 
-    
     <div id="camera" class="d-grid gap-2 col-4 mx-auto">
         <div>
             <span class="diemso"><b>Điểm cao nhất của bạn: </b></span>
@@ -115,23 +115,26 @@
 
     <!-- Hiển thị ảnh chơi cùng nhau -->
     <div class='playTogether'>
-        <image  id="playTogether" src="./assets/family-play-video-game.jpg"
-        alt="Playtogether"/>
+        <image id="playTogether" src="./assets/family-play-video-game.jpg" alt="Playtogether" />
     </div>
 
     <!-- Ảnh brain-->
     <div id="rang">
-        <image id="brain" src="./assets/brain.png"/>
-        <image id="state-jump" src="./assets/jumping.png"/>
-        <image id="state-run" src="./assets/running.png"/>
-        <image id="state-dead" src="./assets/inflection.png"/>
+        <image id="brain" src="./assets/brain.png" />
+        <image id="state-jump" src="./assets/jumping.png" />
+        <image id="state-run" src="./assets/running.png" />
+        <image id="state-dead" src="./assets/inflection.png" />
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
