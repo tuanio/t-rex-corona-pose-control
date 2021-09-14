@@ -1,6 +1,6 @@
 (async () => {
     let adminBoard = await document.querySelector("div.countdown");
-    if (localStorage.getItem('is_super') != true) {
+    if (localStorage.getItem('is_super') != 'true') {
         adminBoard.style.display = 'none';
     }
 })();

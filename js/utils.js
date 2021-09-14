@@ -1,6 +1,6 @@
 var frontendUrl = 'http://127.0.0.1:5501';
-var backendUrl = 'http://127.0.0.1:5000';
-// var backendUrl = 'https://backend-runner.herokuapp.com';
+// var backendUrl = 'http://127.0.0.1:5000';
+var backendUrl = 'https://backend-runner.herokuapp.com';
 var loginUrl = frontendUrl + '/login.html';
 
 function getAccessToken() {

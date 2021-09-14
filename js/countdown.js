@@ -1,6 +1,6 @@
 let hours = 0
-let minutes = 0
-let seconds = 10
+let minutes = 5
+let seconds = 0
 let timeinterval = undefined
 
 function getTimeRemaining(endtime) {
@@ -70,7 +70,7 @@ function startClock() {
             }
         });
         let res = await req.json();
-        if (localStorage.getItem('userDisabled')) {
+        if (localStorage.getItem('is_super') == 'true') {
             localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
         }
     })();
