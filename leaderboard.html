@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/leaderboard.css">
+    <title>Bảng xếp hạng</title>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="countdown">
+            <h1>Đồng hồ đếm ngược</h1>
+            <div class="btn">
+                <button type="button" id="start" onclick="startClock()" class="btn btn-success">Bắt đầu</button>
+                <button type="button" id="stop" onclick="stopClock()" class="btn btn-warning">Dừng</button>
+                <button type="button" id="reset" onclick="resetClock()" class="btn btn-danger">Đặt lại</button>
+            </div>
+            
+            <div id="clockdiv">
+                <div>
+                    <span class="hours">00</span>
+                    <div class="smalltext">Giờ</div>
+                </div>
+
+                <div>
+                    <span class="minutes">05</span>
+                    <div class="smalltext">Phút</div>
+                </div>
+
+                <div>
+                    <span class="seconds">00</span>
+                    <div class="smalltext">Giây</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card one">
+            <div class="header">
+                <h3 class="title">Bảng xếp hạng</h3>
+                <div></div>
+            </div>
+
+            <div class="profile">
+                <div class="person second">
+                    <div class="num">2</div>
+                    <i class="fas fa-crown"></i>
+                    <img src="/assets/boy.png" alt="" class="photo">
+                    <p class="link">@vanthanggl</p>
+                    <p class="points">8023</p>
+                </div>
+
+                <div class="person first">
+                    <div class="num">1</div>
+                    <i class="fas fa-crown"></i>
+                    <img src="/assets/boy.png" alt="" class="photo">
+                    <p class="link">@tuanio</p>
+                    <p class="points">8122</p>
+                </div>
+
+                <div class="person third">
+                    <div class="num">3</div>
+                    <i class="fas fa-crown"></i>
+                    <img src="/assets/girl.png" alt="" class="photo">
+                    <p class="link">@nhunhi03</p>
+                    <p class="points">7884</p>
+                </div>
+            </div>
+            
+            <div class="scroll-down" id="scrollbar-1">
+                <div class="others flex">
+                    <div class="rank">
+                        <i class="fas fa-caret-up"></i>
+                        <p class="num">4</p>
+                    </div>
+
+                    <div class="info flex">
+                        <img src="/assets/boy.png" alt="" class="p_img">
+                        <p class="link">@trongtanphan</p>
+                        <p class="points">7861</p>
+                    </div>
+                </div>
+
+                <div class="others flex">
+                    <div class="rank">
+                        <i class="fas fa-caret-up"></i>
+                        <p class="num">5</p>
+                    </div>
+
+                    <div class="info flex">
+                        <img src="/assets/girl.png" alt="" class="p_img">
+                        <p class="link">@baobao01</p>
+                        <p class="points">4561</p>
+                    </div>
+                </div>
+
+                <div class="others flex">
+                    <div class="rank">
+                        <i class="fas fa-caret-up"></i>
+                        <p class="num">6</p>
+                    </div>
+
+                    <div class="info flex">
+                        <img src="/assets/boy.png" alt="" class="p_img">
+                        <p class="link">@huynhtoan30</p>
+                        <p class="points">3561</p>
+                    </div>
+                </div>
+
+                <div class="others flex">
+                    <div class="rank">
+                        <i class="fas fa-caret-up"></i>
+                        <p class="num">7</p>
+                    </div>
+
+                    <div class="info flex">
+                        <img src="/assets/boy.png" alt="" class="p_img">
+                        <p class="link">@thinhmitbede</p>
+                        <p class="points">3061</p>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/9e0e8c81a4.js" crossorigin="anonymous"></script>
+    <script src="./js/countdown.js"></script>
+</body>
+</html>
