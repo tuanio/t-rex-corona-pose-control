@@ -775,6 +775,7 @@
          */
         gameOver: function () {
             ring(3); // chết
+            localStorage.setItem("isDead", true)
             
             this.playSound(this.soundFx.HIT);
             vibrate(200);

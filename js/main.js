@@ -24,11 +24,10 @@ btnPlay.addEventListener("click", () => {
 });
 
 // Hiệu ứng đám mây
-async function ring(state=0) {
+async function ring(state) {
   let run = await document.querySelector('img#state-run');
   let jump = await document.querySelector('img#state-jump');
   let dead = await document.querySelector('img#state-dead');
-  let brain = await document.querySelector('img#brain');
 
   // Chưa chơi
   if (state == 0) {
@@ -60,9 +59,11 @@ async function ring(state=0) {
 }
 ring(0);
 
+// button account
 let account_btn = document.querySelector('#account-img');
 let account_info = document.querySelector('#form-box');
 var count = 0;
+
 account_btn.onclick = function show_info() {
   if (count%2 == 0) {
     account_info.style.display = 'block';
@@ -73,9 +74,18 @@ account_btn.onclick = function show_info() {
   count += 1;
 }
 
-// async function account() {
-//   let loc_account = await document.getElementByIdt('account');
-//   if (loc_account.onclick == true) {
-//     account_info();
-//   }
-// }
+// sign out button
+let signOut = document.querySelector('button#sign-out');
+signOut.onclick = function refreshAccount() {
+  localStorage.removeItem('Authorization');
+  localStorage.removeItem('username');
+  location.reload();
+}
+
+// show username in account info
+async function show_username() {
+  let nameuser = localStorage.getItem('username');
+  let name_location = await document.querySelector('p#name');
+  name_location.innerText = "Tên: " + nameuser;
+}
+show_username();
