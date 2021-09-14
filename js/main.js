@@ -38,8 +38,8 @@ async function ring(state=0) {
   }
   // Đang nhảy
   else if (state == 1) {
-    brain.style.animation = 'shake 0.5s infinite'
     jump.style.display = 'block';
+    jump.style.animation = 'shake-up 0.5s infinite';
     run.style.display = 'none';
     dead.style.display = 'none';
   }
@@ -47,6 +47,7 @@ async function ring(state=0) {
   else if (state == 2) {
     jump.style.display = 'none';
     run.style.display = 'block';
+    run.style.animation = 'shake-near 0.5s infinite';
     dead.style.display = 'none';
   }
   // Đang chết
@@ -57,10 +58,19 @@ async function ring(state=0) {
   }
 
 }
-ring(3);
+ring(0);
 
-function account_info() {
-  alert('Hello !');
+let account_btn = document.querySelector('#account-img');
+let account_info = document.querySelector('#form-box');
+var count = 0;
+account_btn.onclick = function show_info() {
+  if (count%2 == 0) {
+    account_info.style.display = 'block';
+  }
+  else {
+    account_info.style.display = 'none';
+  }
+  count += 1;
 }
 
 // async function account() {

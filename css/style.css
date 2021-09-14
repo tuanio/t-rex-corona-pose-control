@@ -12,63 +12,45 @@
   animation-iteration-count: infinite;
 } */
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+@keyframes shake-near {
+  from {left: 13.125em}
+  to {left: 14.125em}
 }
 
 @keyframes shake-up {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(1px, 1px) rotate(1deg); }
-  20% { transform: translate(1px, 1px) rotate(2deg); }
-  30% { transform: translate(1px, 2px) rotate(3deg); }
-  40% { transform: translate(1px, 1px) rotate(4deg); }
-  50% { transform: translate(1px, 2px) rotate(5deg); }
-  60% { transform: translate(3px, 1px) rotate(6deg); }
-  70% { transform: translate(3px, 1px) rotate(7deg); }
-  80% { transform: translate(1px, 1px) rotate(8deg); }
-  90% { transform: translate(1px, 2px) rotate(9deg); }
-  100% { transform: translate(1px, 2px) rotate(10deg); }
+  from {top: 2.9em;}
+  to {top: 4.875em;}
 }
 
 
 img#playTogether {
   position: absolute;
-  width: 423px;
-  height: 174px;
-  left: 63px;
-  top: 368px;
-  bottom: 522px;
+  width: 26.438em;
+  height: 10.875em;
+  left: 3.938em;
+  top: 23em;
+  bottom: 32.625em;
   background-size: contain;
 }
 
 #brain {
   position: absolute;
-  width: 270px;
-  height: 190px;
-  left: 38x;
-  top: 25px;
-  bottom: 195px;
+  width: 16.875em;
+  height: 11.875em;
+  left: 0.3em;
+  top: 1.563em;
+  bottom: 12.188em;
   background-size: contain;
-  transform: rotate(360deg);
+  transform: translate(0px, 0px) rotateY(180deg);
 }
 
 #state-jump {
   position: absolute;
-  width: 200px;
-  height: 100px;
-  left: 210px;
-  top: 62px;
-  bottom: 34px;
+  width: 12.5em;
+  height: 6.25em;
+  left: 13.125em;
+  top: 3.875em;
+  bottom: 2.125em;
   display: block;
   animation: shake 0.5s infinite;
   background-size: contain;
@@ -76,11 +58,11 @@ img#playTogether {
 
 #state-run {
   position: absolute;
-  width: 250px;
-  height: 150px;
-  left: 210px;
-  top: 62px;
-  bottom: 34px;
+  width: 12.5em;
+  height: 6.25em;
+  left: 13.125em;
+  top: 3.875em;
+  bottom: 2.125em;
   display: block;
   background-size: contain;
 }
@@ -88,71 +70,60 @@ img#playTogether {
 #state-dead {
   display: none;
   position: absolute;
-  width: 200px;
-  height: 100px;
-  left: 215px;
-  top: 62px;
-  bottom: 34px;
+  width: 12.5em;
+  height: 6.25em;
+  left: 13.125em;
+  top: 3.875em;
+  bottom: 2.125em;
 }
 
-#account {
-  position: top right;
-  width: 60px;
-  height: 50px;
-  left: 1280px;
-  top: 17px;
-  bottom: 66px;
-  display: block;
+#account-img {
+  width: 3.563em;
+  height: 2.75em;
+  margin-top: 1.25em;
+  margin-left: 80.625em;
   cursor: pointer;
 }
-#btn-play {
-  color:rgb(255, 255, 255);
-  font-size: 30px;
-  background-image: linear-gradient(rgb(10, 74, 248), rgb(226, 178, 186));
-  text-shadow: 2px 2px 10px #000;
-}
-#btn-play:before {
-  background-color: black;
-}
-#btn-play:hover {
-  color: rgb(0, 0, 0) !important;
-}
 
-.cachchoi {
-  padding-right: 3px;
-  padding-left: 1600px;
-}
-.cachchoi {
-  position:absolute;
-  top:30%;
-  right: 50px;
-}
-.acount_info {
+#form-box {
+  display: none;
   position: absolute;
-  top:0%;
-  right: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  width:15.625em;
+  background: rgba(0, 0, 0, 0.8);
+  margin-top: 0em;
+  margin-left: 65.625em;
+  padding: 2.5em 0;
+  color: #fff;
+  box-shadow: 0 0 1.25em 0.125em rgba(0, 0, 0, 0.5);
+  border-radius: 1.25em;
+  float: right;
+  letter-spacing: 0.125em;
 }
-.BS {
-  width: 417px;
-  height:432px;
-  position:absolute;
-  top : 30%;
-  left: 20px;
 
+p#info {
+  text-align: center;
+  font-size: 2em;
 }
-.virus {
-    width: 269px;
-    height: 227px;
-    position:absolute;
-    top: 20%;
-    left:8cm;
+
+p#name {
+  margin: 1.25em;
 }
-.picture_glass {
-  width:1996px;
-  position:absolute;
-  top:20%;
+
+p#gender {
+  margin: 1.25em;
 }
-.diemso {
-  color:white;
-  font-size: large;
+
+p#khoa {
+  margin: 1.25em;
+}
+
+button#account-button{
+  width: 5em;
+  height: 1.875em;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: purple;
+  border-radius: 0.188em;
+  margin: 1.25em;
 }
