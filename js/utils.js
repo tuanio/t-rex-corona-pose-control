@@ -1,5 +1,5 @@
-var frontendUrl = 'http://127.0.0.1:5500';
-var backendUrl = 'http://127.0.0.1:5000';
+var frontendUrl = 'http://127.0.0.1:5501';
+var backendUrl = 'https://backend-runner.herokuapp.com';
 var loginUrl = frontendUrl + '/login.html';
 
 function getAccessToken() {
@@ -8,7 +8,7 @@ function getAccessToken() {
 
 async function checkAuthorization() {
     // tạm thời return true để không check đăng nhập
-    return true;
+    // return true;
     //
     let accessToken = getAccessToken();
     if (accessToken !== null) {

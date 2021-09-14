@@ -1,6 +1,7 @@
 let hours = 0
 let minutes = 5
 let seconds = 0
+let timeinterval = undefined
 
 function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
@@ -35,15 +36,26 @@ function initializeClock(id, endtime) {
     }
     
     updateClock();
-    const timeinterval = setInterval(updateClock, 1000);
+    timeinterval = setInterval(updateClock, 1000);
 }
 
 
-let deadline = new Date(Date.parse(new Date()) + (3600 * hours + 60 * minutes + seconds) * 1000);
-initializeClock('clockdiv', deadline)
-
 function startClock() {
     console.log("Start clock")
+    let deadline = new Date(Date.parse(new Date()) + (3600 * hours + 60 * minutes + seconds) * 1000);
+    initializeClock('clockdiv', deadline)
+
+    // let accessToken = getAccessToken();
+    // if (accessToken !== null) {
+    //     let req = await fetch(`${backendUrl}/auth`, {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': 'Bearer ' + accessToken
+    //         }
+    //     });
+    // }
+
+    
 }
 
 function stopClock() {
