@@ -5,7 +5,7 @@
     }
 })();
 
-let timeReq = 1000
+let timeReq = 5000
 
 
 function changeIn4(data, div) {
