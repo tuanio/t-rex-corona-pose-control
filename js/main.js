@@ -1,4 +1,4 @@
-checkAuthorization();
+setInterval(checkAuthorization(), 1000);   
 var count = 0;
 
 let updateHighScore = async () => {

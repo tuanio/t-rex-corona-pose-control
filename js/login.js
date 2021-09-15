@@ -1,4 +1,4 @@
-checkAuthorization();   
+setInterval(checkAuthorization(), 1000);   
 
 async function checkPassword(requestJson) {
     let url = `${backendUrl}/login`;
