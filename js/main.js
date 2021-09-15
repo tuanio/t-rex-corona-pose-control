@@ -79,10 +79,11 @@ setInterval(() => { // chặn nút chơi của người dùng
   let btnPlay = document.querySelector("button#btn-play");
   if (localStorage.getItem('userDisabled') == 'true') {
     btnPlay.disabled = true;
+    location.reload()
   } else {
     btnPlay.disabled = false;
   }
-}, 500)
+}, 200)
 
 // sign out button
 let signOut = document.querySelector('button#sign-out');
