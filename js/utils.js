@@ -50,7 +50,7 @@ async function checkAuthorization() {
 }
 
 if (window.location.href == frontendUrl + '/index.html' || window.location.href == frontendUrl + '/' || window.location.href == frontendUrl + '/login.html') {
-    setInterval(checkAuthorization, 1000);
+    setInterval(checkAuthorization, 2000);
 }
 // document.onkeydown = function (evt) {
 //     //  All shortcut devtools
