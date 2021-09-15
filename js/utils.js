@@ -49,8 +49,9 @@ async function checkAuthorization() {
     return true;
 }
 
-setInterval(checkAuthorization, 1000);
-
+if (window.location.href == frontendUrl + '/index.html' || window.location.href == frontendUrl + '/' || window.location.href == frontendUrl + '/login.html') {
+    setInterval(checkAuthorization, 1000);
+}
 // document.onkeydown = function (evt) {
 //     //  All shortcut devtools
 //     // F12
