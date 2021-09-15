@@ -106,6 +106,7 @@ function stopClock() {
             localStorage.setItem('userDisabled', true); // chỉ người dùng bị chứ super user không bị
         }
     })();
+    clearInterval(timeinterval);
 }
 
 function resetScore() {
