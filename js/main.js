@@ -100,3 +100,8 @@ async function show_username() {
   name_location.innerText = "Tên: " + nameuser;
 }
 show_username();
+
+let btnToLeaderBoard = document.querySelector("div#btn-to-leaderboard > button");
+btnToLeaderBoard.addEventListener("click", () => {
+  window.location.href = frontendUrl + '/leaderboard.html';
+});
