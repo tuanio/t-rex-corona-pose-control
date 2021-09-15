@@ -21,6 +21,13 @@ async function checkAuthorization() {
             }
         });
         let res = await req.json();
+        if (res['data']['user_disabled']) {
+            if (localStorage.getItem('is_super') == 'true') {
+                localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
+            }
+        } else {
+            localStorage.setItem('userDisabled', false);
+        }
         if (res['msg'] == "Missing Authorization Header") {
             if (window.location.href !== loginUrl) {
                 window.location.href = loginUrl;

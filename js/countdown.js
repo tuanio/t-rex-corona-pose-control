@@ -70,9 +70,6 @@ function startClock() {
             }
         });
         let res = await req.json();
-        if (localStorage.getItem('is_super') == 'true') {
-            localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
-        }
     })();
 
     initializeClock('clockdiv', deadline)
@@ -102,9 +99,6 @@ function stopClock() {
             }
         });
         let res = await req.json();
-        if (localStorage.getItem('is_super') === "false") {
-            localStorage.setItem('userDisabled', true); // chỉ người dùng bị chứ super user không bị
-        }
     })();
     clearInterval(timeinterval);
 }
