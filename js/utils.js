@@ -25,6 +25,8 @@ async function checkAuthorization() {
         if (res['data']['user_disabled'] == true) {
             if (localStorage.getItem('is_super') == 'true') {
                 localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
+            } else {
+                localStorage.setItem('userDisabled', true)
             }
         } else {
             localStorage.setItem('userDisabled', false);
