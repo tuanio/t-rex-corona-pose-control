@@ -108,6 +108,20 @@ function stopClock() {
     })();
 }
 
-function resetClock() {
-    console.log("Reset clock")
+function resetScore() {
+    (async () => {
+        let req = await fetch(backendUrl + '/reset-user-score', {
+            method: 'GET',
+            headers: {
+                'Authorization': "Bearer " + getAccessToken(),
+                'Access-Control-Allow-Origin': backendUrl,
+                'credentials': 'include',
+                'cache': 'no-cache'
+            }
+        });
+        let res = await req.json();
+        if (localStorage.getItem('is_super') === "false") {
+            localStorage.setItem('userDisabled', true); // chỉ người dùng bị chứ super user không bị
+        }
+    })();
 }
