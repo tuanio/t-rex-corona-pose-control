@@ -79,7 +79,6 @@ setInterval(() => { // chặn nút chơi của người dùng
   let btnPlay = document.querySelector("button#btn-play");
   if (localStorage.getItem('userDisabled') == 'true') {
     btnPlay.disabled = true;
-    location.reload()
   } else {
     btnPlay.disabled = false;
   }
