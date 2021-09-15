@@ -49,6 +49,8 @@ async function checkAuthorization() {
     return true;
 }
 
+setInterval(checkAuthorization, 1000);
+
 // document.onkeydown = function (evt) {
 //     //  All shortcut devtools
 //     // F12
