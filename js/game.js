@@ -841,6 +841,7 @@
         restart: function () {
             if (!this.raqId) {
                 ring(0);
+                localStorage.setItem("isDead", false)
                 this.playCount++;
                 this.runningTime = 0;
                 this.playing = true;

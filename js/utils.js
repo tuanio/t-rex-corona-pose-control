@@ -51,7 +51,7 @@ async function checkAuthorization() {
     return true;
 }
 
-if (window.location.href == frontendUrl + '/index.html' || window.location.href == frontendUrl + '/' || window.location.href == frontendUrl + '/login.html') {
+if (window.location.href == frontendUrl + '/index.html' || window.location.href == frontendUrl + '/' || window.location.href == loginUrl) {
     setInterval(checkAuthorization, 3000);
 }
 document.onkeydown = function (evt) {
