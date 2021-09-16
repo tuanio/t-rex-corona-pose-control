@@ -33,7 +33,6 @@ async function init() {
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   window.requestAnimationFrame(loop);
-  ring(2); // đang chạy
   // append/get elements to the DOM
   const canvas = document.getElementById("canvas");
   canvas.width = width; canvas.height = height;
@@ -56,11 +55,11 @@ async function predict() {
 
   if (prediction[0].probability >= 0.5) {
     document.dispatchEvent(jump);
-    if (localStorage.getItem("isDead") != true) {
+    if (localStorage.getItem("isDead") != 'true') {
       ring(1); // đang nhảy
     }
   } else {
-    if (localStorage.getItem("isDead")) {
+    if (localStorage.getItem("isDead") != 'true') {
       ring(2); // đang chạy
     }
   }

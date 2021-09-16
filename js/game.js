@@ -840,6 +840,7 @@
 
         restart: function () {
             if (!this.raqId) {
+                ring(0);
                 this.playCount++;
                 this.runningTime = 0;
                 this.playing = true;
