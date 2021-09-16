@@ -70,7 +70,6 @@ function startClock() {
             }
         });
         let res = await req.json();
-        console.log(res);
     })();
 
     initializeClock('clockdiv', deadline)
@@ -100,7 +99,6 @@ function stopClock() {
             }
         });
         let res = await req.json();
-        console.log(res);
     })();
     clearInterval(timeinterval);
 }
