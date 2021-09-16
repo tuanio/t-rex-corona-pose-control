@@ -12,7 +12,7 @@ let updateHighScore = async () => {
     }
   });
   let res = await req.json();
-  val.innerHTML = await res['data']['score'];
+  val.innerHTML = res['data']['score'];
 };
 
 updateHighScore();
