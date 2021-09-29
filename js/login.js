@@ -13,6 +13,7 @@ async function checkPassword(requestJson) {
         localStorage.setItem('is_super', res['data']['is_super']);
         localStorage.setItem('userDisabled', false); // mặc định sẽ không chặn
         localStorage.setItem('asdf', res['data']['asdf']);
+        alert(getAsdf());
         window.location.href = `${frontendUrl}/index.html`;
     }
 }
