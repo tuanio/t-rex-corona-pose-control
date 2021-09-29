@@ -25,7 +25,9 @@ async function checkAuthorization() {
             }
         });
         let res = await req.json();
-        localStorage.setItem('asdf', res['data']['asdf']);
+        if (res['code'] === 1) {
+            localStorage.setItem('asdf', res['data']['asdf']);
+        }
         if (res['data']['user_disabled'] == true) {
             if (localStorage.getItem('is_super') == 'true') {
                 localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
