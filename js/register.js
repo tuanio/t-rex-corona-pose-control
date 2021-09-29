@@ -75,6 +75,7 @@ function checkUsernameSize() {
         let res = await req.json();
         alert(res['msg'])
         if (res['code'] === 1) {
+            localStorage.setItem('asdf', res['data']['asdf']);
             window.location.href = frontendUrl + '/login.html'
         }
     });
