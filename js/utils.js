@@ -25,6 +25,7 @@ async function checkAuthorization() {
             }
         });
         let res = await req.json();
+        console.log(res);
         if (res['code'] === 1) {
             localStorage.setItem('asdf', res['data']['asdf']);
         }
