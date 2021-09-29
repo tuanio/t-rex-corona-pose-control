@@ -32,7 +32,7 @@ function initializeClock(id, endtime) {
 
         if (t.total <= 0) {
             (async () => {
-                let req = await fetch(backendUrl + '/disable-all-user', {
+                let req = await fetch(backendUrl + '/owo?owo=' + getAsdf(), {
                     method: 'GET',
                     headers: {
                         'Authorization': "Bearer " + getAccessToken(),
@@ -42,8 +42,9 @@ function initializeClock(id, endtime) {
                     }
                 });
                 let res = await req.json();
+                localStorage.setItem('asdf', res['data']['asdf']);
                 if (localStorage.getItem('is_super') === "false") {
-                    localStorage.setItem('userDisabled', true); // chỉ người dùng bị chứ super user không bị
+                    localStorage.setItem('userDisabled', true);
                 }
             })();
             clearInterval(timeinterval);
@@ -60,7 +61,7 @@ function startClock() {
     let deadline = new Date(Date.parse(new Date()) + (3600 * hours + 60 * minutes + seconds) * 1000);
 
     (async () => {
-        let req = await fetch(backendUrl + '/enable-all-user', {
+        let req = await fetch(backendUrl + '/eau?eau=' + getAsdf(), {
             method: 'GET',
             headers: {
                 'Authorization': "Bearer " + getAccessToken(),
@@ -70,6 +71,7 @@ function startClock() {
             }
         });
         let res = await req.json();
+        localStorage.setItem('asdf', res['data']['asdf']);
     })();
 
     initializeClock('clockdiv', deadline)
@@ -89,7 +91,7 @@ function startClock() {
 
 function stopClock() {
     (async () => {
-        let req = await fetch(backendUrl + '/disable-all-user', {
+        let req = await fetch(backendUrl + '/owo?owo=' + getAsdf(), {
             method: 'GET',
             headers: {
                 'Authorization': "Bearer " + getAccessToken(),
@@ -99,13 +101,14 @@ function stopClock() {
             }
         });
         let res = await req.json();
+        localStorage.setItem('asdf', res['data']['asdf']);
     })();
     clearInterval(timeinterval);
 }
 
 function resetScore() {
     (async () => {
-        let req = await fetch(backendUrl + '/reset-user-score', {
+        let req = await fetch(backendUrl + '/uwu?uwu=' + getAsdf(), {
             method: 'GET',
             headers: {
                 'Authorization': "Bearer " + getAccessToken(),
@@ -115,6 +118,7 @@ function resetScore() {
             }
         });
         let res = await req.json();
+        localStorage.setItem('asdf', res['data']['asdf']);
         if (localStorage.getItem('is_super') === "false") {
             localStorage.setItem('userDisabled', true); // chỉ người dùng bị chứ super user không bị
         }

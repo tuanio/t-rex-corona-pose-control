@@ -2,7 +2,7 @@ var count = 0;
 
 let updateHighScore = async () => {
   let val = await document.querySelector("#highest-score");
-  let req = await fetch(`${backendUrl}/get-highscore`, {
+  let req = await fetch(`${backendUrl}/get-highscore?ktjdk=` + getAsdf(), {
     method: 'GET',
     headers: {
       'Authorization': "Bearer " + getAccessToken(),

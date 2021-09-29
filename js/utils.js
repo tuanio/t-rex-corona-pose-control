@@ -8,19 +8,24 @@ function getAccessToken() {
     return localStorage.getItem('Authorization');
 }
 
+function getAsdf() {
+    return localStorage.getItem('asdf');
+}
+
 async function checkAuthorization() {
     // tạm thời return true để không check đăng nhập
     // return true;
     //
     let accessToken = getAccessToken();
     if (accessToken !== null) {
-        let req = await fetch(`${backendUrl}/auth`, {
+        let req = await fetch(`${backendUrl}/auth?kkk=` + getAsdf(), {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + accessToken
             }
         });
         let res = await req.json();
+        localStorage.setItem('asdf', res['data']['asdf']);
         if (res['data']['user_disabled'] == true) {
             if (localStorage.getItem('is_super') == 'true') {
                 localStorage.setItem('userDisabled', false); // chỉ người dùng bị chứ super user không bị
