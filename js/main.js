@@ -13,6 +13,7 @@ let updateHighScore = async () => {
   });
   let res = await req.json();
   val.innerHTML = res['data']['score'];
+  localStorage.setItem('asdf', res['data']['asdf']);
 };
 
 updateHighScore();
