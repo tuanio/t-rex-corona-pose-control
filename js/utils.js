@@ -44,7 +44,7 @@ async function checkAuthorization() {
             }
             return false;
         } else if (res['msg'] === 'Tài khoản hiện tại') {
-            if (window.location.href !== frontendUrl + '/') {
+            if (window.location.href !== frontendUrl + '/' || window.location.href !== frontendUrl + '/index.html') {
                 alert('5');
                 window.location.href = frontendUrl;
             }
