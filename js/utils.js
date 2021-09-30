@@ -52,8 +52,8 @@ async function checkAuthorization() {
         }
     } else {
         if (window.location.href !== loginUrl) {
-            window.location.href = loginUrl;
             alert('6');
+            window.location.href = loginUrl;
             return false;
         }
     } 
