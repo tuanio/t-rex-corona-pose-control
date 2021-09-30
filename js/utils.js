@@ -39,7 +39,6 @@ async function checkAuthorization() {
         }
         if (res['msg'] == "Missing Authorization Header") {
             if (window.location.href !== loginUrl) {
-                alert('4');
                 window.location.href = loginUrl;
             }
             return false;
@@ -53,7 +52,6 @@ async function checkAuthorization() {
         }
     } else {
         if (window.location.href !== loginUrl) {
-            alert('6');
             window.location.href = loginUrl;
             return false;
         }
@@ -62,7 +60,6 @@ async function checkAuthorization() {
 }
 
 if (window.location.href == frontendUrl + '/index.html' || window.location.href == frontendUrl + '/' || window.location.href == loginUrl) {
-    alert(window.location.href);
     setInterval(checkAuthorization, 3000);
 }
 document.onkeydown = function (evt) {
