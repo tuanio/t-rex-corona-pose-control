@@ -43,11 +43,11 @@ async function checkAuthorization() {
             }
             return false;
         } else if (res['msg'] === 'Tài khoản hiện tại') {
-            alert('Front end url: ' + window.location.href);
-            if (window.location.href !== frontendUrl + '/' || window.location.href !== frontendUrl + '/index.html') {
-                alert('5');
-                window.location.href = frontendUrl;
-            }
+            // alert('Front end url: ' + window.location.href);
+            // if (window.location.href !== frontendUrl + '/' || window.location.href !== frontendUrl + '/index.html') {
+            //     alert('5');
+            //     window.location.href = frontendUrl;
+            // }
             return true;
         }
     } else {
